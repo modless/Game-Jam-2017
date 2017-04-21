@@ -1,4 +1,6 @@
 #: import SoundLoader __main__.SoundLoader
+#: import sm __main__.sm
+#: import map __main__.map
 
 <Footer@Button>
     size_hint: .1, .1
@@ -10,9 +12,11 @@
     Footer:
         text: 'Map'
         pos_hint: {'x':.0, 'y': .0}
+        on_press: sm.current = 'Title 1'
     Footer:
         text: 'Research Centre'
         pos_hint: {'x':.1, 'y': .0}
+        on_press: sm.current = 'Title 2'
 
     Footer:
         text: 'Button 3'
