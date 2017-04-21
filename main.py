@@ -13,22 +13,10 @@ from kivy.core.audio import SoundLoader # garsam
 from kivy.uix.screenmanager import ScreenManager, Screen # ekranam
 
 map = Image(source='map.png')
-screenMng = ScreenManager() # screen manageris
-
-#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-class MapScreen(Screen):
-    pass
-class StationsScreen(Screen):
+class RootWidget(Widget):
     pass
 
-
-screenMng.add_widget(MapScreen(name='mapScreen'))
-screenMng.add_widget(StationsScreen(name='stationsScreen'))
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-class RootWidget(FloatLayout):
-    pass
 
 class MainApp(App):
 
