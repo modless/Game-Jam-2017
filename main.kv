@@ -1,6 +1,6 @@
 #: import SoundLoader __main__.SoundLoader
-#: import sm __main__.sm
 #: import map __main__.map
+#: import screenMng __main__.screenMng
 
 <Footer@Button>
     size_hint: .1, .1
@@ -12,11 +12,11 @@
     Footer:
         text: 'Map'
         pos_hint: {'x':.0, 'y': .0}
-        on_press: sm.current = 'Title 1'
+        on_press: screenMng.current = 'mapScreen'
     Footer:
-        text: 'Research Centre'
+        text: 'Stations'
         pos_hint: {'x':.1, 'y': .0}
-        on_press: sm.current = 'Title 2'
+        on_press: screenMng.current = 'stationsScreen'
 
     Footer:
         text: 'Button 3'
@@ -53,13 +53,7 @@
     Image:
         size_hint: .3, .3
         pos_hint: {'x':.5, 'y': .5}
-        canvas:
-            Color:
-                rgb: (1, 1, 1)
-            Rectangle:
-                texture: map
-                size: self.size
-                pos: self.pos
+        source: 'map.png'
 
 
 

@@ -13,18 +13,19 @@ from kivy.core.audio import SoundLoader # garsam
 from kivy.uix.screenmanager import ScreenManager, Screen # ekranam
 
 map = Image(source='map.png')
-
-cliclSound = SoundLoader.load('Untitled 2.wav') # uzloadinam click garsa
 screenMng = ScreenManager() # screen manageris
 
-screenMng.add_widget(MapScreen(name='mapScreen'))
-screenMng.add_widget(StationsScreen(name='stationsScreen'))
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 class MapScreen(Screen):
     pass
 class StationsScreen(Screen):
     pass
 
+
+screenMng.add_widget(MapScreen(name='mapScreen'))
+screenMng.add_widget(StationsScreen(name='stationsScreen'))
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 class RootWidget(FloatLayout):
     pass
