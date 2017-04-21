@@ -19,15 +19,15 @@
         on_press: screenMng.current = 'stationsScreen'
 
     Footer:
-        text: 'Button 3'
+        text: 'Finances'
         pos_hint: {'x':.2, 'y': .0}
 
     Footer:
-        text: 'Button 4'
+        text: 'Research'
         pos_hint: {'x':.3, 'y': .0}
 
     Footer:
-        text: 'Button 5'
+        text: 'Conections'
         pos_hint: {'x':.4, 'y': .0}
 
     Footer:
@@ -43,12 +43,13 @@
         pos_hint: {'x':.7, 'y': .0}
 
     Footer:
-        text: 'Button 9'
+        text: 'Setting'
         pos_hint: {'x':.8, 'y': .0}
 
     Footer:
-        text: 'Button 10'
+        text: 'Quit'
         pos_hint: {'x':.9, 'y': .0}
+        on_press: sys.exit(0)
 
     Image:
         size_hint: .3, .3
