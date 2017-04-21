@@ -12,9 +12,6 @@ from kivy.uix.screenmanager import ScreenManager, Screen # ekranam
 
 cliclSound = SoundLoader.load('Untitled 2.wav') # uzloadinam click garsa
 screenMng = ScreenManager() # screen manageris
-
-screenMng.add_widget(MapScreen(name='mapScreen'))
-screenMng.add_widget(StationsScreen(name='stationsScreen'))
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 class MapScreen(Screen):
@@ -22,6 +19,10 @@ class MapScreen(Screen):
 class StationsScreen(Screen):
     pass
 
+
+screenMng.add_widget(MapScreen(name='mapScreen'))
+screenMng.add_widget(StationsScreen(name='stationsScreen'))
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 class RootWidget(FloatLayout):
     pass

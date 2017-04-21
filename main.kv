@@ -1,17 +1,16 @@
 #: import SoundLoader __main__.SoundLoader
-#: import sm __main__.sm
-
+#: import screenMng __main__.screenMng
 <RootWidget>
     Button:
-        text: 'Button 1'
+        text: 'Map'
         size_hint: .1, .1
         pos_hint: {'x':.0, 'y': .0}
-        on_press: sm.current = 'Title 1'
+        on_press: screenMng.current = 'mapScreen'
     Button:
-        text: 'Button 2'
+        text: 'Stations'
         size_hint: .1, .1
         pos_hint: {'x':.1, 'y': .0}
-        on_press: sm.current = 'Title 2'
+        on_press: screenMng.current = 'stationsScreen'
 
     Button:
         text: 'Button 3'
