@@ -1,17 +1,17 @@
 #: import SoundLoader __main__.SoundLoader
-
+#: import sm __main__.sm
 
 <RootWidget>
     Button:
         text: 'Button 1'
         size_hint: .1, .1
         pos_hint: {'x':.0, 'y': .0}
-        on_press: SoundLoader.load('Untitled 2.wav').play()
+        on_press: sm.current = 'Title 1'
     Button:
         text: 'Button 2'
         size_hint: .1, .1
         pos_hint: {'x':.1, 'y': .0}
-        on_press: SoundLoader.load('Untitled 2.wav').play()
+        on_press: sm.current = 'Title 2'
 
     Button:
         text: 'Button 3'
