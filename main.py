@@ -19,6 +19,7 @@ from kivy.uix.gridlayout import GridLayout
 from decimal import getcontext, Decimal
 from kivy.properties import StringProperty, NumericProperty, BooleanProperty, DictProperty
 from kivy.uix.label import Label
+from kivy.core.window import Window
 
 import time
 
@@ -79,6 +80,8 @@ class MainApp(App):
 
     cashlogSTR = StringProperty('cashlogSTR: 0')
     def build(self):
+        Window.set_title('Easy way in')
+        Window.set_icon('logo1.png')
         Clock.schedule_interval(self.update, 1)
         return RootWidget()
 
