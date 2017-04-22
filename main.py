@@ -69,6 +69,8 @@ class MainApp(App):
     shroomsString = StringProperty('Shrooms: 0')
     heroinString = StringProperty('Heroin: 0')
     stomachsString = StringProperty('Stomachs: 0')
+    map_x = 0
+    map_y = 0
 
 
 
