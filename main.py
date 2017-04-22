@@ -35,7 +35,7 @@ class MainApp(App):
     date = 0
     modifier = NumericProperty(1)
     dateStr = StringProperty()
-    connStr = StringProperty('connectionScreen')
+    connStr = StringProperty('connectionsScreen')
     boolOFF = BooleanProperty(False)
     ##########################
     #   Product Object List  #
@@ -67,6 +67,8 @@ class MainApp(App):
     shroomsString = StringProperty('Shrooms: 0')
     heroinString = StringProperty('Heroin: 0')
     stomachsString = StringProperty('Stomachs: 0')
+    map_x = 0
+    map_y = 0
 
 
 
