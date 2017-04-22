@@ -13,7 +13,7 @@ from kivy.core.audio import SoundLoader # garsam
 from kivy.uix.screenmanager import ScreenManager, Screen # ekranam
 
 map = Image(source='map.png')
-class RootWidget(Widget):
+class RootWidget(FloatLayout):
     pass
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

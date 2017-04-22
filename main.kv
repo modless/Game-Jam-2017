@@ -1,6 +1,5 @@
 #: import SoundLoader __main__.SoundLoader
 #: import map __main__.map
-#: import ScreenManager __main__.ScreenManager
 
 <Footer@Button>
     size_hint: .1, .1
@@ -12,16 +11,17 @@
 
 
 <StationsScreen@Screen>
-    current: 'mapScreen'
+    size_hint: 1, 1
+
     FloatLayout:
         Footer:
             text: 'Map'
             pos_hint: {'x':.0, 'y': .0}
-            on_press: ScreenManager.current = 'mapScreen'
+            on_press: self.parent.switch_to = 'mapScreen'
         Footer:
             text: 'Stations'
             pos_hint: {'x':.1, 'y': .0}
-            on_press: ScreenManager.current = 'stationsScreen'
+            on_press: self.parent.switch_to = 'stationsScreen'
 
         Footer:
             text: 'Finances'
@@ -66,15 +66,16 @@
             source: 'map.png'
 
 <MapScreen@Screen>
+    size_hint: 1, 1
     FloatLayout:
         Footer:
             text: 'Map'
             pos_hint: {'x':.0, 'y': .0}
-            on_press: ScreenManager.current = 'mapScreen'
+            on_press: self.parent.parent.parent.switch_to(MapScreen)
         Footer:
             text: 'Stations'
             pos_hint: {'x':.1, 'y': .0}
-            on_press: ScreenManager.current = 'stationsScreen'
+            on_press: self.parent.parent.parent.switch_to(StationsScreen)
 
         Footer:
             text: 'Finances'
@@ -119,7 +120,9 @@
             source: 'map.png'
 
 <RootWidget>
+    size_hint: 1, 1
     ScreenManager
+        id: ScrnManager
         MapScreen:
             name: 'mapScreen'
         StationsScreen:
