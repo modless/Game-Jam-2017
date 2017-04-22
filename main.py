@@ -5,7 +5,10 @@ import sys
 from kivy.app import App
 from kivy.uix.floatlayout import FloatLayout
 from kivy.lang import BuilderBase, Builder
-
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.listview import ListView, ListItemButton
+from kivy.adapters.dictadapter import DictAdapter
 from kivy.uix.widget import Widget
 from kivy.graphics import *
 from kivy.uix.image import Image
@@ -15,14 +18,26 @@ from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
 from functools import partial
 from kivy.uix.modalview import ModalView
-from kivy.uix.gridlayout import GridLayout
 from decimal import getcontext, Decimal
 from kivy.properties import StringProperty, NumericProperty, BooleanProperty, DictProperty
 from kivy.uix.label import Label
+from kivy.core.window import Window
 
+from BlackList import *
+#from BlackList import MasterDetailView, DrugDetailView
 import time
 
+
+
+
+
 getcontext().prec = 1
+
+class MasterDetailView:
+    pass
+
+class DrugDetailView:
+    pass
 
 class RootWidget(FloatLayout):
     pass
@@ -143,6 +158,8 @@ class MainApp(App):
 
     cashlogSTR = StringProperty('cashlogSTR: 0')
     def build(self):
+        Window.set_title('Easy way in')
+        Window.set_icon('logo1.png')
         Clock.schedule_interval(self.update, 1)
         return RootWidget()
 
@@ -207,4 +224,5 @@ class MainApp(App):
 
 
 if __name__ == '__main__':
+
     MainApp().run()

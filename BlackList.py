@@ -32,103 +32,102 @@ integers_dict = {str(i): {'text': str(i), 'is_selected': False}
 drug_data_list_of_dicts = [
     {
         'name': 'Moskow',
-        'Serving Size': '1 large (242 g/8 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Amsterdam',
-        'Serving Size': '1/5 medium (30 g/1.1 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Melbourne',
-        'Serving Size': '1 medium (126 g/4.5 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Dzakarta',
-        'Serving Size': '1/4 medium (134 g/4.8 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Tokyo',
-        'Serving Size': '1/2 medium (154 g/5.5 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Kyoto',
-        'Serving Size': '3/4 cup (126 g/4.5 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Seoul',
-        'Serving Size': '1/10 medium melon (134 g/4.8 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Shanghai',
-        'Serving Size': '2 medium (148 g/5.3 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Bankok',
-        'Serving Size': '1 medium (58 g/2.1 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Hyderabado',
-        'Serving Size': '1 medium (67 g/2.4 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Islamabad',
-        'Serving Size': '1 medium (140 g/5.0 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Kinshasa',
-        'Serving Size': '1 medium (154 g/5.5 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Egypt',
-        'Serving Size': '1 medium (147 g/5.3 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Ankara',
-        'Serving Size': '1 medium (166 g/5.9 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Hamburg',
-        'Serving Size': '2 slices, 3" diameter, 3/4" thick (112 g/4 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'London',
-        'Serving Size': '2 medium (151 g/5.4 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Rio De Janeiro',
-        'Serving Size': '8 medium (147 g/5.3 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Bogota',
-        'Serving Size': '21 cherries; 1 cup (140 g/5.0 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Mexico',
-        'Serving Size': '1 medium (109 g/3.9 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
     {
         'name': 'Chicago',
-        'Serving Size':
-            '1/18 medium melon; 2 cups diced pieces (280 g/10.0 oz)',
+        'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False}]
 
@@ -210,13 +209,8 @@ class DrugDetailView(GridLayout):
         self.redraw()
 
 class MasterDetailView(GridLayout):
-    '''Implementation of an master-detail view with a vertical scrollable list
-    on the left (the master, or source list) and a detail view on the right.
-    When selection changes in the master list, the content of the detail view
-    is updated.
-    '''
 
-    def __init__(self, items, **kwargs):
+    def __init__(self, **kwargs):
         kwargs['cols'] = 2
         super(MasterDetailView, self).__init__(**kwargs)
 

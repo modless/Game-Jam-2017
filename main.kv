@@ -68,8 +68,11 @@
         pos_hint: {'x':.6, 'y': .0}
         on_release: root.parent.parent.current = 'warehouseScreen' #ref to ScreenManager
     DfltButton:
-        text: 'Button 8'
+        text: 'Global Prices'
         pos_hint: {'x':.7, 'y': .0}
+        on_release: root.parent.parent.current = 'pricesScreen' #ref to ScreenManager
+        #on_release: app.PricesScreen
+
 
     DfltButton:
         text: 'Setting'
@@ -611,9 +614,23 @@
         size_hint: 0.9, 0.05
         pos_hint: {'x':.1, 'y': .75}
 
+##############################
+#    Global Prices Screen    #
+##############################
+
+<PricesScreen@Screen>
+    size_hint: 1, 1
+    MasterDetailView:
+        size_hint: 1, 1
+        DrugDetailView:
+            size_hint: 1, 1
 
 
-
+    DfltButton:
+        id: BackToMap
+        text: '<<<'
+        pos_hint: {'x':.0, 'y': .0}
+        on_release: self.parent.parent.current = 'mapScreen' #ref to ScreenManager
 
 
 #################################
@@ -648,5 +665,6 @@
             name: 'organicProductionScreen'
         WarehouseScreen:
             name: 'warehouseScreen'
-
+        PricesScreen
+            name: 'pricesScreen'
 
