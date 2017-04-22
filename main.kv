@@ -2,110 +2,89 @@
 #: import map __main__.map
 #: import NoTransition __main__.NoTransition
 
+####################
+#Bottom Menu Button#
+####################
 <Footer@Button>
     size_hint: .1, .1
     on_press: SoundLoader.load('Untitled 2.wav').play()
     text_size: (self.width, None)
     halign: 'center'
 
+####################
+#Whole Bottom Menu #
+####################
 
+<Bottom_Menu@FloatLayout>
+    Footer:
+        text: 'Map'
+        pos_hint: {'x':.0, 'y': .0}
+        on_press: self.parent.parent.parent.current = 'mapScreen' #ref to ScreenManager
+    Footer:
+        text: 'Stations'
+        pos_hint: {'x':.1, 'y': .0}
+        on_press: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
 
+    Footer:
+        text: 'Finances'
+        pos_hint: {'x':.2, 'y': .0}
+
+    Footer:
+        text: 'Research'
+        pos_hint: {'x':.3, 'y': .0}
+
+    Footer:
+        text: 'Conections'
+        pos_hint: {'x':.4, 'y': .0}
+
+    Footer:
+        text: 'Button 6'
+        pos_hint: {'x':.5, 'y': .0}
+
+    Footer:
+        text: 'Button 7'
+        pos_hint: {'x':.6, 'y': .0}
+
+    Footer:
+        text: 'Button 8'
+        pos_hint: {'x':.7, 'y': .0}
+
+    Footer:
+        text: 'Setting'
+        pos_hint: {'x':.8, 'y': .0}
+
+    Footer:
+        text: 'Quit'
+        pos_hint: {'x':.9, 'y': .0}
+        on_press: sys.exit(0)
+
+####################
+# Stations Screen  #
+####################
 
 <StationsScreen@Screen>
     size_hint: 1, 1
 
-    FloatLayout:
-        Footer:
-            text: 'Map'
-            pos_hint: {'x':.0, 'y': .0}
-            on_press: self.parent.parent.parent.current = 'mapScreen' #ref to ScreenManager
-        Footer:
-            text: 'Stations'
-            pos_hint: {'x':.1, 'y': .0}
-            on_press: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
+    Bottom_Menu:
+        size_hint: 1, 1
 
-        Footer:
-            text: 'Finances'
-            pos_hint: {'x':.2, 'y': .0}
-
-        Footer:
-            text: 'Research'
-            pos_hint: {'x':.3, 'y': .0}
-
-        Footer:
-            text: 'Conections'
-            pos_hint: {'x':.4, 'y': .0}
-
-        Footer:
-            text: 'Button 6'
-            pos_hint: {'x':.5, 'y': .0}
-
-        Footer:
-            text: 'Button 7'
-            pos_hint: {'x':.6, 'y': .0}
-
-        Footer:
-            text: 'Button 8'
-            pos_hint: {'x':.7, 'y': .0}
-
-        Footer:
-            text: 'Setting'
-            pos_hint: {'x':.8, 'y': .0}
-
-        Footer:
-            text: 'Quit'
-            pos_hint: {'x':.9, 'y': .0}
-            on_press: sys.exit(0)
+####################
+#    Map Screen    #
+####################
 
 <MapScreen@Screen>
     size_hint: 1, 1
-    FloatLayout:
-        Footer:
-            text: 'Map'
-            pos_hint: {'x':.0, 'y': .0}
-            on_press: self.parent.parent.parent.current = 'mapScreen' #ref to ScreenManager
-        Footer:
-            text: 'Stations'
-            pos_hint: {'x':.1, 'y': .0}
-            on_press: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
+    Bottom_Menu:
+        size_hint: 1, 1
 
-        Footer:
-            text: 'Finances'
-            pos_hint: {'x':.2, 'y': .0}
+    Image:
+        size_hint: .5, .5
+        pos_hint: {'x':.5, 'y': .5}
+        source: 'map.png'
 
-        Footer:
-            text: 'Research'
-            pos_hint: {'x':.3, 'y': .0}
-
-        Footer:
-            text: 'Conections'
-            pos_hint: {'x':.4, 'y': .0}
-
-        Footer:
-            text: 'Button 6'
-            pos_hint: {'x':.5, 'y': .0}
-
-        Footer:
-            text: 'Button 7'
-            pos_hint: {'x':.6, 'y': .0}
-
-        Footer:
-            text: 'Button 8'
-            pos_hint: {'x':.7, 'y': .0}
-
-        Footer:
-            text: 'Setting'
-            pos_hint: {'x':.8, 'y': .0}
-
-        Footer:
-            text: 'Quit'
-            pos_hint: {'x':.9, 'y': .0}
-            on_press: sys.exit(0)
-
-        Image:
-            size_hint: .5, .5
-            pos_hint: {'x':.5, 'y': .5}
-            source: 'map.png'
+#################################
+# Root Widget & ScreenManager   #
+#################################
 
 <RootWidget>
     size_hint: 1, 1
