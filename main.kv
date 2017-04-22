@@ -11,6 +11,16 @@
     on_press: SoundLoader.load('Untitled 2.wav').play()
     text_size: (self.width, None)
     halign: 'center'
+
+####################
+#  Location Toggle #
+####################
+
+<LocationToggle@CheckBox>:
+    size_hint: 0.02, 0.02
+    background_radio_normal: 'Location_Off.png'
+    background_radio_down: 'Location_On.png'
+    group: "location"
     
 ####################
 #  Default Label  #
@@ -94,9 +104,17 @@
         size_hint: 1, 1
 
     Image:
+        id: map
         size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
-        source: 'stations.png'
+        source: 'map.png'
+
+        LocationToggle:
+            pos: dp(10), dp(10)
+
+
+
+
 
 ####################
 #    Map Screen    #
