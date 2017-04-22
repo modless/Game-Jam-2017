@@ -14,6 +14,8 @@ from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
 from functools import partial
+from kivy.uix.modalview import ModalView
+from kivy.uix.gridlayout import GridLayout
 from decimal import getcontext, Decimal
 from kivy.properties import StringProperty, NumericProperty, BooleanProperty, DictProperty
 from kivy.uix.label import Label
@@ -70,6 +72,11 @@ class MainApp(App):
     shroomsString = StringProperty('Shrooms: 0')
     heroinString = StringProperty('Heroin: 0')
     stomachsString = StringProperty('Stomachs: 0')
+    map_x = 0
+    map_y = 0
+
+
+
     cashlogSTR = StringProperty('cashlogSTR: 0')
     def build(self):
         Clock.schedule_interval(self.update, 1)
