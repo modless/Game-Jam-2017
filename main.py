@@ -28,7 +28,7 @@ class RootWidget(FloatLayout):
 
 class MainApp(App):
     cash = 100000
-    widget = ResearchScreen(RootWidget)
+    #widget = ResearchScreen(RootWidget)
     connlvl = 1
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
@@ -91,7 +91,7 @@ class MainApp(App):
                 self.connStr = 'connections3Screen'
     def ModDisable(self,up,cost):
         if cost <= self.cash:
-            widget = ResearchScreen()
+            #widget = ResearchScreen()
             self.cash -= cost
             self.modifier += up
             remove_widget(widget.ids['OP2-1'].ids)

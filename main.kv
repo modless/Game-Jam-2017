@@ -16,9 +16,7 @@
 ####################
 
 <LocationToggle@CheckBox>:
-    size_hint: 0.02, 0.02
-    background_radio_normal: 'Location_Off.png'
-    background_radio_down: 'Location_On.png'
+    size: self.size
     group: "location"
 
 ####################
@@ -121,10 +119,18 @@
         id: map
         size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
-        source: 'stations.png'
+        source: 'map.png'
 
     LocationToggle:
-        pos: dp(10), dp(10)
+        size_hint: .9, .85
+        pos_hint: {'x':.0, 'y': .1}
+       # background_radio_down: "Location_1_On.png"
+       # background_radio_normal: 'Location_1_Off.png'
+        active: 'true'
+
+    LocationToggle:
+        size_hint: .9, .85
+        pos_hint: {'x':.2, 'y': .4}
 
 
 
