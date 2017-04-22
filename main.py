@@ -56,6 +56,18 @@ class MainApp(App):
     modifier = NumericProperty(1)
     dateStr = StringProperty()
     connStr = StringProperty('connectionsScreen')
+    boolOFF1= BooleanProperty(False)
+    boolOFF2=BooleanProperty(False)
+    boolOFF3=BooleanProperty(False)
+    boolOFF4=BooleanProperty(False)
+    boolOFF5=BooleanProperty(False)
+    boolOFF6=BooleanProperty(False)
+    boolOFF7=BooleanProperty(False)
+    boolOFF8=BooleanProperty(False)
+    boolOFF9=BooleanProperty(False)
+    boolOFF10=BooleanProperty(False)
+    boolOFF11=BooleanProperty(False)
+    boolOFF12=BooleanProperty(False)
     boolOFF = BooleanProperty(False)
     cityNotSelected = BooleanProperty(True)
     Products = DictProperty({
@@ -176,6 +188,29 @@ class MainApp(App):
         self.cashlogSTR = self.getstringfromarray(self.cashlog)
     def getstringfromarray(self, array):
         return ''.join(array)
+    def getstringfromint(self, integ):
+        return str(integ)
+    def setbool(self, nr):
+        if nr==1:
+            self.boolOFF1=True
+        elif nr==2:
+            self.boolOFF2=True
+        elif nr==3:
+            self.boolOFF3=True
+        elif nr==4:
+            self.boolOFF4=True
+        elif nr==5:
+            self.boolOFF5=True
+        elif nr==6:
+            self.boolOFF6=True
+        elif nr==7:
+            self.boolOFF7=True
+        elif nr==8:
+            self.boolOFF8=True
+        elif nr==9:
+            self.boolOFF9=True
+        elif nr==12:
+            self.boolOFF12=True
     def SellAll(self):
         print('HELLO')
         self.cash +=(((self.Products['Marijuana']['quantity'])*1000*self.modifier)+
@@ -223,17 +258,21 @@ class MainApp(App):
                 self.connStr = 'connections2Screen'
                 self.cashlog.append(self.dateStr + ": minus " + str(cost) + " euros\n")
                 print(''.join(self.cashlog))
+                self.boolOFF10 = True
+                print(self.boolOFF10)
         elif lvl==3:
             if cost <= self.cash:
                 self.cash -= cost
                 self.connStr = 'connections3Screen'
                 self.cashlog.append(self.dateStr + ": minus " + str(cost) + " euros\n")
-    def ModDisable(self,up,cost):
+                self.boolOFF11 = True
+    def ModDisable(self,up,cost,bul):
         if cost <= self.cash:
             self.cash -= cost
             self.modifier += up
-            self.boolOFF = True
+            self.setbool(bul)
             self.cashlog.append(self.dateStr + ": minus " + str(cost) + " euros\n")
+
 
     def getProduct(self, identifier):
         if self.Products[identifier]["cost"] <= self.cash:
