@@ -1,5 +1,6 @@
 #: import SoundLoader __main__.SoundLoader
 #: import map __main__.map
+#: import NoTransition __main__.NoTransition
 
 <Footer@Button>
     size_hint: .1, .1
@@ -17,11 +18,11 @@
         Footer:
             text: 'Map'
             pos_hint: {'x':.0, 'y': .0}
-            on_press: self.parent.switch_to = 'mapScreen'
+            on_press: self.parent.parent.parent.current = 'mapScreen' #ref to ScreenManager
         Footer:
             text: 'Stations'
             pos_hint: {'x':.1, 'y': .0}
-            on_press: self.parent.switch_to = 'stationsScreen'
+            on_press: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
 
         Footer:
             text: 'Finances'
@@ -55,15 +56,6 @@
             text: 'Quit'
             pos_hint: {'x':.9, 'y': .0}
             on_press: sys.exit(0)
-
-        Footer:
-            pos_hint: {'x':.9, 'y': .3}
-            text: 'Research'
-
-        Image:
-            size_hint: .3, .3
-            pos_hint: {'x':.5, 'y': .5}
-            source: 'map.png'
 
 <MapScreen@Screen>
     size_hint: 1, 1
@@ -71,11 +63,11 @@
         Footer:
             text: 'Map'
             pos_hint: {'x':.0, 'y': .0}
-            on_press: self.parent.parent.parent.switch_to(MapScreen)
+            on_press: self.parent.parent.parent.current = 'mapScreen' #ref to ScreenManager
         Footer:
             text: 'Stations'
             pos_hint: {'x':.1, 'y': .0}
-            on_press: self.parent.parent.parent.switch_to(StationsScreen)
+            on_press: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
 
         Footer:
             text: 'Finances'
@@ -110,19 +102,15 @@
             pos_hint: {'x':.9, 'y': .0}
             on_press: sys.exit(0)
 
-        Footer:
-            pos_hint: {'x':.9, 'y': .3}
-            text:'test'
-
         Image:
-            size_hint: .3, .3
+            size_hint: .5, .5
             pos_hint: {'x':.5, 'y': .5}
             source: 'map.png'
 
 <RootWidget>
     size_hint: 1, 1
     ScreenManager
-        id: ScrnManager
+        transition: NoTransition()
         MapScreen:
             name: 'mapScreen'
         StationsScreen:
