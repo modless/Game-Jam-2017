@@ -44,19 +44,19 @@
         on_release: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
 
     DfltButton:
-        text: 'Finances'
+        text: 'Conections'
         pos_hint: {'x':.2, 'y': .0}
+        on_release: self.parent.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
+
+    DfltButton:
+        text: 'Finances'
+        pos_hint: {'x':.3, 'y': .0}
         on_release: self.parent.parent.parent.current = 'financesScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Research'
-        pos_hint: {'x':.3, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'researchScreen' #ref to ScreenManager
-
-    DfltButton:
-        text: 'Conections'
         pos_hint: {'x':.4, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
+        on_release: self.parent.parent.parent.current = 'researchScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Production'
@@ -116,7 +116,7 @@
         id: map
         size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
-        source: 'map.png'
+        source: 'stations.png'
 
     LocationToggle:
         pos: dp(10), dp(10)
@@ -346,6 +346,8 @@
 
 <ResearchScreen@Screen>
     size_hint: 1, 1
+    Image:
+        source: 'tiled.png'
     DfltButton:
         text: 'Upgrade_1-2'
         pos_hint: {'x':1.2, 'y': 1.2}
@@ -394,13 +396,22 @@
         pos_hint: {'x':.45, 'y': .8}
         id: OP2-1
     DfltButton:
+        text: 'Connection lvl 2 \n 2000\u20ac'
+        pos_hint: {'x':.45, 'y': .6}
+        id: OP2-1
+    DfltButton:
+        text: 'Steroids\n 2000\u20ac'
+        pos_hint: {'x':.45, 'y': .8}
+        id: OP2-1
+    DfltButton:
         id: BackToMap
         text: '<<<'
         pos_hint: {'x':.0, 'y': .0}
         on_release: self.parent.parent.current = 'mapScreen' #ref to ScreenManager
         #Or whatever is the previous screen
 
-
+    Stats_Bar:
+        size_hint: 1, 1
 
 #################################
 # Root Widget & ScreenManager   #
