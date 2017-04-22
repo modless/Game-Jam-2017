@@ -30,12 +30,13 @@ class RootWidget(FloatLayout):
 #Builder.load_file('main.kv')
 class MainApp(App):
     cash = 1000
+    connlvl = 1
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
     date = 0
     modifier = NumericProperty(1)
     dateStr = StringProperty()
-
+    connStr = "connectionsScreen"
 
     def build(self):
         Clock.schedule_interval(self.update, 1)
@@ -46,6 +47,15 @@ class MainApp(App):
         self.cashStr = 'Money:' + str(self.cash) + "\u20ac"
         self.date += 1
         self.dateStr = str(Decimal(self.date)/Decimal(24)) + "Days"
+
+    def upgradeConn(self, lvl):
+        if lvl==1:
+            connStr = 'connectionsScreen'
+            print("conn scr changed")
+        elif lvl==2:
+            connStr = 'connections2Screen'
+        elif lvl==3:
+            connStr = 'connections3Screen'
     def ModDisable(self,up,cost):
         if cost <= self.cash:
             self.cash -= cost
