@@ -426,10 +426,6 @@
         pos_hint: {'x':.45, 'y': .1}
         id: OP1-1
     DfltButton:
-        text: 'Steroids\n 2000\u20ac'
-        pos_hint: {'x':.45, 'y': .8}
-        id: OP2-1
-    DfltButton:
         text: 'Connection lvl 2 \n 2000\u20ac'
         pos_hint: {'x':.45, 'y': .6}
         id: OP2-8
@@ -438,6 +434,7 @@
         text: 'Steroids 4 workers\n 2000\u20ac'
         pos_hint: {'x':.45, 'y': .8}
         on_release: app.ModDisable(0.05,2000)
+        disabled: app.boolOFF
         id: OP2-1
     DfltButton:
         id: BackToMap
@@ -467,7 +464,7 @@
         pos_hint: {'x':.05, 'y': .90}
 
     DfltLabel:
-        text: 'Marijuana: ' + str(eval(app.Products['Marijuana']['quantity']))
+        text: 'Marijuana: ' + str(app.Products['Marijuana']['quantity'])
         size_hint: 0.9, 0.05
         pos_hint: {'x':.1, 'y': .85}
 

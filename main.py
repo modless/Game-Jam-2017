@@ -15,7 +15,7 @@ from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
 from functools import partial
 from decimal import getcontext, Decimal
-from kivy.properties import StringProperty, NumericProperty
+from kivy.properties import StringProperty, NumericProperty, BooleanProperty
 from kivy.uix.label import Label
 import time
 
@@ -30,7 +30,7 @@ class RootWidget(FloatLayout):
 #Builder.load_file('main.kv')
 class MainApp(App):
     cash = 10000
-    widget = ResearchScreen(RootWidget)
+    #widget = ResearchScreen(RootWidget)
     connlvl = 1
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
@@ -38,7 +38,7 @@ class MainApp(App):
     modifier = NumericProperty(1)
     dateStr = StringProperty()
     connStr = StringProperty('connectionScreen')
-
+    boolOFF = BooleanProperty(False)
     ##########################
     #   Product Object List  #
     ##########################
@@ -89,10 +89,10 @@ class MainApp(App):
                 self.connStr = 'connections3Screen'
     def ModDisable(self,up,cost):
         if cost <= self.cash:
-            widget = ResearchScreen()
+            #widget = ResearchScreen()
             self.cash -= cost
             self.modifier += up
-            remove_widget(widget.ids['OP2-1'].ids)
+            self.boolOFF = True
 
     def getProduct(self, identifier):
         if self.Products[identifier]["cost"] <= self.cash:
