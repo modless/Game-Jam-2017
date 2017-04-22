@@ -241,7 +241,7 @@
     DfltButton:
         size_hint: 0.2, 0.3
         pos_hint: {'x':.4, 'y': .4}
-        text: 'Organic Production'
+        text: 'Organs'
         on_release: root.parent.current = 'organicProductionScreen' #ref to ScreenManager
 
     DfltButton:
@@ -264,53 +264,60 @@
         size_hint: 1, 1
 
     DfltButton:
-        text: 'up4'
+        text: 'Crack\n Costs: 1500\u20ac'
         pos_hint: {'x':.1, 'y': .20}
         size_hint: 0.2, 0.2
-        #on_release: app.getProduct(1000, '')
+        on_release: app.getProduct('Crack')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Amphetamine\n Costs: 7000\u20ac'
         pos_hint: {'x':.4, 'y': .20}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Amphetamine')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Ketamine\n Costs: 6000\u20ac'
         pos_hint: {'x':.7, 'y': .20}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Ketamine')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Ecstasy\n Costs: 3500\u20ac'
         pos_hint: {'x':.1, 'y': .45}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Ecstasy')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'LSD\n Costs: 3000\u20ac'
         pos_hint: {'x':.4, 'y': .45}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('LSD')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Cocaine\n Costs: 2500\u20ac'
         pos_hint: {'x':.7, 'y': .45}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Cocaine')
 
     DfltButton:
-        text: 'Marijuana Farm Patch \n Costs: 1000\u20ac'
+        text: 'Marijuana\n Costs: 1000\u20ac'
         pos_hint: {'x':.1, 'y': .7}
         size_hint: 0.2, 0.2
         on_release: app.getProduct('Marijuana')
 
     DfltButton:
-        text: 'Shroom Farm \n Costs: 2000\u20ac'
+        text: 'Shrooms \n Costs: 2000\u20ac'
         pos_hint: {'x':.4, 'y': .7}
         size_hint: 0.2, 0.2
         on_release: app.getProduct('Shrooms')
 
     DfltButton:
-        text: 'Heroin Lab \n Costs: 5000\u20ac'
+        text: 'Heroin \n Costs: 5000\u20ac'
         pos_hint: {'x':.7, 'y': .7}
         size_hint: 0.2, 0.2
         on_release: app.getProduct('Heroin')
+
+
 
 #############################
 # Organic Production Screen #
@@ -326,53 +333,58 @@
         size_hint: 1, 1
 
     DfltButton:
-        text: 'up4'
+        text: 'Shoulders\n Costs:3000\u20ac'
         pos_hint: {'x':.1, 'y': .20}
         size_hint: 0.2, 0.2
-        #on_release: app.getProduct(1000, 5)
+        on_release: app.getProduct('Shoulders')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Pair of Eyeballs\n Costs:4000\u20ac'
         pos_hint: {'x':.4, 'y': .20}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Pairs of Eyeballs')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Skull with Teeth\n Costs:5000\u20ac'
         pos_hint: {'x':.7, 'y': .20}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Skulls with Teeth')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Small Intestine\n Costs:12000\u20ac'
         pos_hint: {'x':.1, 'y': .45}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Small Intestines')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Spleen\n Costs:6000\u20ac'
         pos_hint: {'x':.4, 'y': .45}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Spleens')
 
     DfltButton:
-        text: 'Upgrade_4'
+        text: 'Liver\n Costs:10000\u20ac'
         pos_hint: {'x':.7, 'y': .45}
         size_hint: 0.2, 0.2
+        on_release: app.getProduct('Livers')
 
     DfltButton:
-        text: 'Stomach Stealing \n Costs:7000\u20ac'
+        text: 'Stomach\n Costs:7000\u20ac'
         pos_hint: {'x':.1, 'y': .7}
         size_hint: 0.2, 0.2
         on_release: app.getProduct('Stomachs')
 
     DfltButton:
-        text: ' '
+        text: 'Heart\n Costs:14000\u20ac'
         pos_hint: {'x':.4, 'y': .7}
         size_hint: 0.2, 0.2
-        #on_release: app.incomeUp(2000, 15)
+        on_release: app.getProduct('Hearts')
 
     DfltButton:
-        text: ' '
+        text: 'Kidney\n Costs:26000\u20ac'
         pos_hint: {'x':.7, 'y': .7}
         size_hint: 0.2, 0.2
-        #on_release: app.incomeUp(5000, 50)
+        on_release: app.getProduct('Kidneys')
 
 ##########################
 #    Research Screen     #
@@ -465,6 +477,118 @@
 
     DfltLabel:
         text: 'Drugs:'
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.05, 'y': .90}
+
+    DfltLabel:
+        text: app.marijuanaString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .85}
+
+    DfltLabel:
+        text: app.shroomsString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .80}
+
+    DfltLabel:
+        text: app.heroinString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .75}
+
+    DfltLabel:
+        text: app.cocaineString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .70}
+
+    DfltLabel:
+        text: app.LSDString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .65}
+
+    DfltLabel:
+        text: app.ecstasyString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .60}
+
+    DfltLabel:
+        text: app.ketamineString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .55}
+
+    DfltLabel:
+        text: app.amphetamineString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .50}
+
+    DfltLabel:
+        text: app.crackString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.1, 'y': .45}
+
+    DfltLabel:
+        text: 'Organs:'
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.35, 'y': .90}
+
+    DfltLabel:
+        text: app.stomachsString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .85}
+
+    DfltLabel:
+        text: app.kidneysString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .80}
+
+    DfltLabel:
+        text: app.heartsString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .75}
+
+    DfltLabel:
+        text: app.liversString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .70}
+
+    DfltLabel:
+        text: app.spleensString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .65}
+
+    DfltLabel:
+        text: app.smallIntestinesString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .60}
+
+    DfltLabel:
+        text: app.skullsWithTeethString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .55}
+
+    DfltLabel:
+        text: app.pairsOfEyeballsString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .5}
+
+    DfltLabel:
+        text: app.shouldersString
+        size_hint: 0.25, 0.05
+        pos_hint: {'x':.4, 'y': .45}
+
+##########################
+#    Startup Screen      #
+##########################
+
+<StartupScreen@Screen>
+    size_hint: 1, 1
+    Bottom_Menu:
+        size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
+
+    ToggleButton:
+        text: 'Drugs:'
         size_hint: 0.9, 0.05
         pos_hint: {'x':.05, 'y': .90}
 
@@ -496,6 +620,8 @@
     size_hint: 1, 1
     ScreenManager:
         transition: SlideTransition()
+        StartupScreen:
+            name: 'startupScreen'
         MapScreen:
             name: 'mapScreen'
         StationsScreen:

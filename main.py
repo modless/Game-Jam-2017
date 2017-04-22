@@ -30,7 +30,6 @@ class RootWidget(FloatLayout):
 
 class MainApp(App):
     cash = 100000
-    #widget = ResearchScreen(RootWidget)
     connlvl = 1
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
@@ -39,13 +38,6 @@ class MainApp(App):
     dateStr = StringProperty()
     connStr = StringProperty('connectionsScreen')
     boolOFF = BooleanProperty(False)
-    ##########################
-    #   Product Object List  #
-    ##########################
-    #Product(1000, 0)
-    #Shrooms = Product(2000, 15, 0)
-    #Heroin = Product(5000, 50, 0)
-    #Stomachs = Product(7000, 75, 0)
     Products = DictProperty({
         "Marijuana": {
             "cost": 1000,
@@ -59,8 +51,64 @@ class MainApp(App):
             "cost": 5000,
             "quantity": 0
         },
+        "Cocaine": {
+            "cost": 2500,
+            "quantity": 0
+        },
+        "LSD": {
+            "cost": 3000,
+            "quantity": 0
+        },
+        "Ecstasy": {
+            "cost": 3500,
+            "quantity": 0
+        },
+        "Ketamine": {
+            "cost": 6000,
+            "quantity": 0
+        },
+        "Amphetamine": {
+            "cost": 7000,
+            "quantity": 0
+        },
+        "Crack": {
+            "cost": 1500,
+            "quantity": 0
+        },
         "Stomachs": {
             "cost": 7000,
+            "quantity": 0
+        },
+        "Kidneys": {
+            "cost": 26000,
+            "quantity": 0
+        },
+        "Hearts": {
+            "cost": 14000,
+            "quantity": 0
+        },
+        "Livers": {
+            "cost": 10000,
+            "quantity": 0
+        },
+        "Spleens": {
+            "cost": 6000,
+            "quantity": 0
+        },
+        "Small Intestines": {
+            "cost": 26000,
+            "quantity": 0
+        },
+        "Skulls with Teeth": {
+            "cost": 5000,
+            "quantity": 0
+        },
+        "Pairs of Eyeballs": {
+            "cost": 4000,
+            "quantity": 0
+        },
+        "Shoulders": {
+            "cost": 3000,
             "quantity": 0
         }
     })
@@ -68,7 +116,22 @@ class MainApp(App):
     marijuanaString = StringProperty('Marijuana: 0')
     shroomsString = StringProperty('Shrooms: 0')
     heroinString = StringProperty('Heroin: 0')
+    cocaineString = StringProperty('Cocaine: 0')
+    LSDString = StringProperty('LSD: 0')
+    ecstasyString = StringProperty('Ecstasy: 0')
+    ketamineString = StringProperty('Ketamine: 0')
+    amphetamineString = StringProperty('Amphetamine: 0')
+    crackString = StringProperty('Crack: 0')
     stomachsString = StringProperty('Stomachs: 0')
+    kidneysString = StringProperty('Kidneys: 0')
+    heartsString = StringProperty('Hearts: 0')
+    liversString = StringProperty('Livers: 0')
+    spleensString = StringProperty('Spleens: 0')
+    smallIntestinesString = StringProperty('Small Intestines: 0')
+    skullsWithTeethString = StringProperty('Skulls with Teeth: 0')
+    pairsOfEyeballsString = StringProperty('Pairs of Eyeballs: 0')
+    shouldersString = StringProperty('Shoulders: 0')
+
     map_x = 0
     map_y = 0
 
@@ -95,7 +158,6 @@ class MainApp(App):
                 self.connStr = 'connections3Screen'
     def ModDisable(self,up,cost):
         if cost <= self.cash:
-            #widget = ResearchScreen()
             self.cash -= cost
             self.modifier += up
             self.boolOFF = True
@@ -105,9 +167,23 @@ class MainApp(App):
             self.cash -= self.Products[identifier]["cost"]
             self.Products[identifier]["quantity"] += 1
             self.marijuanaString = 'Marijuana: ' + str(self.Products['Marijuana']['quantity'])
-            self.shroomsString = 'Marijuana: ' + str(self.Products['Shrooms']['quantity'])
-            self.heroinString = 'Marijuana: ' + str(self.Products['Heroin']['quantity'])
-            self.stomachString = 'Marijuana: ' + str(self.Products['Stomachs']['quantity'])
+            self.shroomsString = 'Shrooms: ' + str(self.Products['Shrooms']['quantity'])
+            self.cocaineString = 'Cocaine: ' + str(self.Products['Cocaine']['quantity'])
+            self.LSDString = 'LSD: ' + str(self.Products['LSD']['quantity'])
+            self.ecstasyString = 'Ecstasy: ' + str(self.Products['Ecstasy']['quantity'])
+            self.ketamineString = 'Ketamine: ' + str(self.Products['Ketamine']['quantity'])
+            self.amphetamineString = 'Amphetamine: ' + str(self.Products['Amphetamine']['quantity'])
+            self.crackString = 'Crack: ' + str(self.Products['Crack']['quantity'])
+            self.heroinString = 'Heroin: ' + str(self.Products['Heroin']['quantity'])
+            self.stomachsString = 'Stomachs: ' + str(self.Products['Stomachs']['quantity'])
+            self.kidneysString = 'Kidneys: ' + str(self.Products['Kidneys']['quantity'])
+            self.heartsString = 'Hearts: ' + str(self.Products['Hearts']['quantity'])
+            self.liversString = 'Livers: ' + str(self.Products['Livers']['quantity'])
+            self.spleensString = 'Spleens: ' + str(self.Products['Spleens']['quantity'])
+            self.smallIntestinesString = 'Small Intestines: ' + str(self.Products['Small Intestines']['quantity'])
+            self.skullsWithTeethString = 'Skulls with Teeth: ' + str(self.Products['Skulls with Teeth']['quantity'])
+            self.pairsOfEyeballsString = 'Pairs of Eyeballs: ' + str(self.Products['Pairs of Eyeballs']['quantity'])
+            self.shouldersString = 'Shoulders: ' + str(self.Products['Shoulders']['quantity'])
 
 
 
