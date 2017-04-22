@@ -176,6 +176,46 @@ class MainApp(App):
         self.cashlogSTR = self.getstringfromarray(self.cashlog)
     def getstringfromarray(self, array):
         return ''.join(array)
+    def SellAll(self):
+        print('HELLO')
+        self.cash +=(((self.Products['Marijuana']['quantity'])*1000*self.modifier)+
+        ((self.Products['Shrooms']['quantity']) * 2000 * self.modifier)+
+        ((self.Products['Cocaine']['quantity']) * 2500 * self.modifier)+
+        ((self.Products['LSD']['quantity']) * 3000 * self.modifier)+
+        ((self.Products['Ecstasy']['quantity']) * 3500 * self.modifier)+
+        ((self.Products['Ketamine']['quantity']) * 6000 * self.modifier)+
+        ((self.Products['Amphetamine']['quantity']) * 7000 * self.modifier)+
+        ((self.Products['Crack']['quantity']) * 1500 * self.modifier)+
+        ((self.Products['Heroin']['quantity']) * 5000 * self.modifier)+
+        ((self.Products['Spleens']['quantity']) * 6000 * self.modifier)+
+        ((self.Products['Kidneys']['quantity']) * 26000 * self.modifier)+
+        ((self.Products['Hearts']['quantity']) * 14000 * self.modifier)+
+        ((self.Products['Stomachs']['quantity']) * 7000 * self.modifier)+
+        ((self.Products['Livers']['quantity']) * 10000 * self.modifier)+
+        ((self.Products['Small Intestines']['quantity']) * 26000 * self.modifier)+
+        ((self.Products['Skulls with Teeth']['quantity']) * 5000 * self.modifier)+
+        ((self.Products['Pairs of Eyeballs']['quantity']) * 4000 * self.modifier)+
+        ((self.Products['Shoulders']['quantity']) * 3000 * self.modifier))
+
+        self.Products['Marijuana']['quantity'] = 0
+        self.Products['Shrooms']['quantity'] = 0
+        self.Products['Cocaine']['quantity'] = 0
+        self.Products['LSD'][ 'quantity'] = 0
+        self.Products['Ecstasy']['quantity']= 0
+        self.Products['Ketamine']['quantity']= 0
+        self.Products['Amphetamine']['quantity'] = 0
+        self.Products['Crack']['quantity'] = 0
+        self.Products['Heroin']['quantity'] = 0
+        self.Products['Spleens']['quantity']= 0
+        self.Products['Kidneys']['quantity']= 0
+        self.Products['Hearts']['quantity'] = 0
+        self.Products['Stomachs']['quantity']= 0
+        self.Products['Livers']['quantity'] = 0
+        self.Products['Small Intestines']['quantity'] = 0
+        self.Products['Skulls with Teeth']['quantity'] = 0
+        self.Products['Pairs of Eyeballs']['quantity'] = 0
+        self.Products['Shoulders']['quantity'] = 0
+        self.cashStr = 'Money:' + str(self.cash) + "\u20ac"
     def upgradeConn(self, lvl,cost,devSPD,orderSPD):
         if lvl==2:
             if cost <= self.cash:
