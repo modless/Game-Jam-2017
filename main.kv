@@ -16,7 +16,9 @@
 ####################
 
 <LocationToggle@CheckBox>:
-    size: self.size
+    size_hint: 0.02, 0.02
+    background_radio_normal: 'Location_Off.png'
+    background_radio_down: 'Location_On.png'
     group: "location"
 
 ####################
@@ -99,7 +101,7 @@
         text: app.connStr
 
 
-        
+
 
 
 ####################
@@ -292,11 +294,11 @@
         pos_hint: {'x':.7, 'y': .45}
         size_hint: 0.2, 0.2
 
-    DfltButton:
-        text: 'Marijuana Farm Patch \n Costs: 1000\u20ac'
-        pos_hint: {'x':.1, 'y': .7}
-        size_hint: 0.2, 0.2
-        on_release: app.getProduct('Marijuana')
+   # DfltButton:
+        #text: 'Marijuana Farm Patch \n Costs: 1000\u20ac'
+       # pos_hint: {'x':.1, 'y': .7}
+        #size_hint: 0.2, 0.2
+        #on_release: app.getProduct('Marijuana')
 
     DfltButton:
         text: 'Shroom Farm \n Costs: 2000\u20ac'
@@ -427,7 +429,12 @@
         text: 'Connection lvl 2 \n 2000\u20ac'
         pos_hint: {'x':.45, 'y': .6}
         id: OP2-8
-        on_release: app.upgradeConn(2,5000,1.05,1.05)
+        on_release: app.upgradeConn(2,2000,1.05,1.05)
+    DfltButton:
+        text: 'Connection lvl 3 \n 4000\u20ac'
+        pos_hint: {'x':.45, 'y': .4}
+        id: OP2-8
+        on_release: app.upgradeConn(3,4000,1.1,1.1)
     DfltButton:
         text: 'Steroids 4 workers\n 2000\u20ac'
         pos_hint: {'x':.45, 'y': .8}
@@ -462,17 +469,17 @@
         pos_hint: {'x':.05, 'y': .90}
 
     DfltLabel:
-        text: app.marijuanaString
+        text: 'Marijuana: ' + str(app.Products['Marijuana']['quantity'])
         size_hint: 0.9, 0.05
         pos_hint: {'x':.1, 'y': .85}
 
     DfltLabel:
-        text: app.shroomsString
+        text: 'Shrooms: '  + str(app.Products['Shrooms']['quantity'])
         size_hint: 0.9, 0.05
         pos_hint: {'x':.1, 'y': .80}
 
     DfltLabel:
-        text: app.heroinString
+        text: 'Heroin: ' + str(app.Products['Heroin']['quantity'])
         size_hint: 0.9, 0.05
         pos_hint: {'x':.1, 'y': .75}
 
