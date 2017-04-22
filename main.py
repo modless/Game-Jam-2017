@@ -19,6 +19,7 @@ from kivy.uix.gridlayout import GridLayout
 from decimal import getcontext, Decimal
 from kivy.properties import StringProperty, NumericProperty, BooleanProperty, DictProperty
 from kivy.uix.label import Label
+
 import time
 
 getcontext().prec = 1
@@ -30,6 +31,9 @@ class RootWidget(FloatLayout):
 
 class MainApp(App):
     cash = 100000
+    cashlog = []
+    cashlog.append('Hello\n')
+    #widget = ResearchScreen(RootWidget)
     connlvl = 1
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
@@ -137,30 +141,37 @@ class MainApp(App):
 
 
 
+    cashlogSTR = StringProperty('cashlogSTR: 0')
     def build(self):
         Clock.schedule_interval(self.update, 1)
         return RootWidget()
-                                            
+
     def update(self, dt):
         self.cash += self.income*self.modifier
         self.cashStr = 'Money:' + str(self.cash) + "\u20ac"
         self.date += 1
         self.dateStr = str(Decimal(self.date)/Decimal(24)) + "Days"
-
+        self.cashlogSTR = self.getstringfromarray(self.cashlog)
+    def getstringfromarray(self, array):
+        return ''.join(array)
     def upgradeConn(self, lvl,cost,devSPD,orderSPD):
         if lvl==2:
             if cost <= self.cash:
                 self.cash -= cost
                 self.connStr = 'connections2Screen'
+                self.cashlog.append(self.dateStr + ": minus " + str(cost) + " euros\n")
+                print(''.join(self.cashlog))
         elif lvl==3:
             if cost <= self.cash:
                 self.cash -= cost
                 self.connStr = 'connections3Screen'
+                self.cashlog.append(self.dateStr + ": minus " + str(cost) + " euros\n")
     def ModDisable(self,up,cost):
         if cost <= self.cash:
             self.cash -= cost
             self.modifier += up
             self.boolOFF = True
+            self.cashlog.append(self.dateStr + ": minus " + str(cost) + " euros\n")
 
     def getProduct(self, identifier):
         if self.Products[identifier]["cost"] <= self.cash:

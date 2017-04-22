@@ -197,7 +197,7 @@
         source: 'map3.png'
 
 ##########################
-#    Financies Screen  #
+#    Finances Screen  #
 ##########################
 
 <FinancesScreen@Screen>
@@ -208,16 +208,20 @@
 
     Bottom_Menu:
         size_hint: 1, 1
-    Widget:
-        size_hint: .5, .5
+    #Widget:
+        #size_hint: .5, .5
 
-        pos_hint: {'x':0, 'y': .5}
-        canvas:
-            Color:
-                rgb: 1, 1, 1
-            Rectangle:
-                pos: self.pos
-                size: self.size
+        #pos_hint: {'x':0, 'y': .5}
+        #canvas:
+            #Color:
+                #rgb: 1, 1, 1
+            #Rectangle:
+                #pos: self.pos
+                #size: self.size
+    DfltLabel:
+        text: app.cashlogSTR
+        pos_hint: {'x':.0, 'y': .4}
+
 
 ##########################
 #    Production Screen   #
