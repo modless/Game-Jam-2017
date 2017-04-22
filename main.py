@@ -15,7 +15,7 @@ from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
 from functools import partial
 from decimal import getcontext, Decimal
-from kivy.properties import StringProperty, NumericProperty
+from kivy.properties import StringProperty, NumericProperty, DictProperty
 from kivy.uix.label import Label
 import time
 
@@ -27,7 +27,7 @@ class RootWidget(FloatLayout):
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 class MainApp(App):
-    cash = 1000
+    cash = 100000
     connlvl = 1
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
@@ -43,7 +43,7 @@ class MainApp(App):
     #Shrooms = Product(2000, 15, 0)
     #Heroin = Product(5000, 50, 0)
     #Stomachs = Product(7000, 75, 0)
-    Products = {
+    Products = DictProperty({
         "Marijuana": {
             "cost": 1000,
             "quantity": 0,
@@ -60,8 +60,12 @@ class MainApp(App):
             "cost": 7000,
             "quantity": 0
         }
-    }
+    })
 
+    marijuanaString = StringProperty('Marijuana: 0')
+    shroomsString = StringProperty('Shrooms: 0')
+    heroinString = StringProperty('Heroin: 0')
+    stomachsString = StringProperty('Stomachs: 0')
 
 
 
@@ -94,6 +98,14 @@ class MainApp(App):
         if self.Products[identifier]["cost"] <= self.cash:
             self.cash -= self.Products[identifier]["cost"]
             self.Products[identifier]["quantity"] += 1
+            self.marijuanaString = 'Marijuana: ' + str(self.Products['Marijuana']['quantity'])
+            self.shroomsString = 'Marijuana: ' + str(self.Products['Shrooms']['quantity'])
+            self.heroinString = 'Marijuana: ' + str(self.Products['Heroin']['quantity'])
+            self.stomachString = 'Marijuana: ' + str(self.Products['Stomachs']['quantity'])
+
+    def getProductString(self, identifier):
+        quantity = self.Products[identifier]['quantity']
+        return identifier + ": " + str(quantity)
 
 
 
