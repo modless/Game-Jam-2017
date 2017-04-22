@@ -73,7 +73,7 @@
 ####################
 <Stats_Bar@FloatLayout>
     DfltLabel:
-        size_hint: .4, .02
+        size_hint: .4, .03
         pos_hint: {'x':.0, 'y': .97}
         text: 'Money: ' + str(cash) + "\u20ac"
         
@@ -104,6 +104,10 @@
 
 <MapScreen@Screen>
     size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
+
     Bottom_Menu:
         size_hint: 1, 1
 
@@ -118,6 +122,9 @@
 
 <ConnectionsScreen@Screen>
     size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
 
     Bottom_Menu:
         size_hint: 1, 1
