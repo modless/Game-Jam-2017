@@ -1,7 +1,6 @@
 #: import SoundLoader __main__.SoundLoader
-#: import map __main__.map
 #: import NoTransition __main__.NoTransition
-
+#: import sys __main__.sys
 ####################
 #Bottom Menu Button#
 ####################
@@ -36,7 +35,7 @@
     Footer:
         text: 'Conections'
         pos_hint: {'x':.4, 'y': .0}
-            on_press: self.parent.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
+        on_press: self.parent.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
 
     Footer:
         text: 'Button 6'
@@ -70,9 +69,9 @@
         size_hint: 1, 1
 
     Image:
-            size_hint: .9, .9
-            pos_hint: {'x':.0, 'y': .1}
-            source: 'stations.png'
+        size_hint: .9, .9
+        pos_hint: {'x':.0, 'y': .1}
+        source: 'stations.png'
 
 ####################
 #    Map Screen    #
@@ -89,12 +88,16 @@
         pos_hint: {'x':.0, 'y': .1}
         source: 'map.png'
 
- #########################
-##   Connections Screen  #
+##########################
+#    Connections Screen  #
 ##########################
 
 <ConnectionsScreen@Screen>
     size_hint: 1, 1
+
+    Bottom_Menu:
+        size_hint: 1, 1
+
     Image:
         size_hint: .9, .9
         pos_hint: {'x':.0, 'y': .1}
