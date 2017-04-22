@@ -37,6 +37,7 @@
     DfltButton:
         text: 'Finances'
         pos_hint: {'x':.2, 'y': .0}
+        on_press: self.parent.parent.parent.current = 'financesScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Research'
@@ -132,6 +133,26 @@
         source: 'connections.png'
 
 ##########################
+#    Financies Screen  #
+##########################
+
+<FinancesScreen@Screen>
+    size_hint: 1, 1
+
+    Bottom_Menu:
+        size_hint: 1, 1
+    Widget:
+        size_hint: .5, .5
+
+        pos_hint: {'x':0, 'y': .5}
+        canvas:
+            Color:
+                rgb: 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+##########################
 #    Research Screen     #
 ##########################
 
@@ -191,5 +212,7 @@
             name: 'connectionsScreen'
         ResearchScreen
             name: 'researchScreen'
+        FinancesScreen:
+            name: 'financesScreen'
 
 
