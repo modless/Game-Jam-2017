@@ -15,7 +15,7 @@ from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
 from functools import partial
 from decimal import getcontext, Decimal
-from kivy.properties import StringProperty, NumericProperty, DictProperty
+from kivy.properties import StringProperty, NumericProperty, BooleanProperty, DictProperty
 from kivy.uix.label import Label
 import time
 
@@ -36,7 +36,7 @@ class MainApp(App):
     modifier = NumericProperty(1)
     dateStr = StringProperty()
     connStr = StringProperty('connectionScreen')
-
+    boolOFF = BooleanProperty(False)
     ##########################
     #   Product Object List  #
     ##########################
@@ -94,7 +94,7 @@ class MainApp(App):
             #widget = ResearchScreen()
             self.cash -= cost
             self.modifier += up
-            remove_widget(widget.ids['OP2-1'].ids)
+            self.boolOFF = True
 
     def getProduct(self, identifier):
         if self.Products[identifier]["cost"] <= self.cash:
