@@ -36,6 +36,7 @@
     Footer:
         text: 'Conections'
         pos_hint: {'x':.4, 'y': .0}
+            on_press: self.parent.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
 
     Footer:
         text: 'Button 6'
@@ -68,9 +69,15 @@
     Bottom_Menu:
         size_hint: 1, 1
 
+    Image:
+            size_hint: .9, .9
+            pos_hint: {'x':.0, 'y': .1}
+            source: 'stations.png'
+
 ####################
 #    Map Screen    #
 ####################
+
 
 <MapScreen@Screen>
     size_hint: 1, 1
@@ -78,9 +85,20 @@
         size_hint: 1, 1
 
     Image:
-        size_hint: .5, .5
-        pos_hint: {'x':.5, 'y': .5}
+        size_hint: .9, .9
+        pos_hint: {'x':.0, 'y': .1}
         source: 'map.png'
+
+ #########################
+##   Connections Screen  #
+##########################
+
+<ConnectionsScreen@Screen>
+    size_hint: 1, 1
+    Image:
+        size_hint: .9, .9
+        pos_hint: {'x':.0, 'y': .1}
+        source: 'connections.png'
 
 #################################
 # Root Widget & ScreenManager   #
@@ -94,5 +112,7 @@
             name: 'mapScreen'
         StationsScreen:
             name: 'stationsScreen'
+        ConnectionsScreen:
+            name: 'connectionsScreen'
 
 
