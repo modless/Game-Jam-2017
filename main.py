@@ -12,10 +12,9 @@ from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, NumericProperty
 from kivy.uix.label import Label
 import time
-Builder.load_file('main.kv')
 
 
 class RootWidget(FloatLayout):
@@ -26,6 +25,7 @@ class RootWidget(FloatLayout):
 class MainApp(App):
     cash = 1000
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
+    income = NumericProperty(0)
 
 
     def build(self):
@@ -36,12 +36,9 @@ class MainApp(App):
         return RootWidget()
                                             
     def update(self, dt):
-        self.cash = self.cash + 1000
+        self.cash += 1000
         self.cashStr = 'Money:' + str(self.cash) + "\u20ac"
 
-       # print(self.cashStr)
-        #self.cash = self.cash + 1000
-        #return RootWidget()
 
                                       
                                         
