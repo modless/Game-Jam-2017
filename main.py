@@ -35,7 +35,7 @@ class MainApp(App):
     date = 0
     modifier = NumericProperty(1)
     dateStr = StringProperty()
-    connStr = StringProperty('connectionScreen')
+    connStr = StringProperty('connectionsScreen')
     boolOFF = BooleanProperty(False)
     ##########################
     #   Product Object List  #
