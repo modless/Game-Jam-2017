@@ -31,6 +31,7 @@
     Footer:
         text: 'Research'
         pos_hint: {'x':.3, 'y': .0}
+        on_press: self.parent.parent.parent.current = 'researchScreen' #ref to ScreenManager
 
     Footer:
         text: 'Conections'
@@ -103,6 +104,50 @@
         pos_hint: {'x':.0, 'y': .1}
         source: 'connections.png'
 
+##########################
+#    Research Screen     #
+##########################
+
+<ResearchScreen@Screen>
+    size_hint: 1, 1
+    Footer:
+        text: 'Upgrade_4'
+        pos_hint: {'x':.275, 'y': .2}
+    Footer:
+        text: 'Upgrade_1'
+        pos_hint: {'x':.275, 'y': .7}
+    Footer:
+        text: 'Upgrade_2'
+        pos_hint: {'x':.2, 'y': .35}
+    Footer:
+        text: 'Upgrade_3'
+        pos_hint: {'x':.2, 'y': .55}
+    Footer:
+        text: 'Upgrade_7'
+        pos_hint: {'x':.7, 'y': .35}
+    Footer:
+        text: 'Upgrade_6'
+        pos_hint: {'x':.7, 'y': .55}
+    Footer:
+        text: 'Upgrade_8'
+        pos_hint: {'x':.625, 'y': .2}
+    Footer:
+        text: 'Upgrade_5'
+        pos_hint: {'x':.625, 'y': .7}
+    Footer:
+        text: 'OP_Upgrade_1'
+        pos_hint: {'x':.45, 'y': .1}
+    Footer:
+        text: 'OP_Upgrade_2'
+        pos_hint: {'x':.45, 'y': .8}
+    Footer:
+        text: '<<<'
+        pos_hint: {'x':.0, 'y': .0}
+        on_press: self.parent.parent.current = 'mapScreen' #ref to ScreenManager
+        #Or whatever is the previous screen
+
+
+
 #################################
 # Root Widget & ScreenManager   #
 #################################
@@ -117,5 +162,7 @@
             name: 'stationsScreen'
         ConnectionsScreen:
             name: 'connectionsScreen'
+        ResearchScreen
+            name: 'researchScreen'
 
 
