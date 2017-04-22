@@ -9,9 +9,11 @@ from kivy.lang import BuilderBase, Builder
 from kivy.uix.widget import Widget
 from kivy.graphics import *
 from kivy.uix.image import Image
+from kivy.uix.button import Button
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
+from functools import partial
 from decimal import getcontext, Decimal
 from kivy.properties import StringProperty, NumericProperty
 from kivy.uix.label import Label
@@ -31,6 +33,7 @@ class MainApp(App):
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
     date = 0
+    modifier = NumericProperty(1)
     dateStr = StringProperty()
 
 
@@ -39,11 +42,15 @@ class MainApp(App):
         return RootWidget()
                                             
     def update(self, dt):
-        self.cash += self.income
+        self.cash += self.income*self.modifier
         self.cashStr = 'Money:' + str(self.cash) + "\u20ac"
         self.date += 1
         self.dateStr = str(Decimal(self.date)/Decimal(24)) + "Days"
-
+    def ModDisable(self,up,cost):
+        if cost <= self.cash:
+            self.cash -= cost
+            self.modifier += up
+            Button.Disabled = True
 
     def incomeUp(self, cost, up):
         if cost <= self.cash:

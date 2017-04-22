@@ -261,22 +261,22 @@
         size_hint: 0.2, 0.2
 
     DfltButton:
-        text: 'Marijuana Farm Patch \n 1000\u20ac \n Income: +5\u20ac/s'
+        text: 'Marijuana Farm Patch \n 1000\u20ac \n Income: +25\u20ac/s'
         pos_hint: {'x':.1, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(1000, 5)
+        on_release: app.incomeUp(1000, 15)
 
     DfltButton:
-        text: 'Shroom Farm \n 2000\u20ac \n Income: +15\u20ac/s'
+        text: 'Shroom Farm \n 2000\u20ac \n Income: +65\u20ac/s'
         pos_hint: {'x':.4, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(2000, 15)
+        on_release: app.incomeUp(2000, 40)
 
     DfltButton:
-        text: 'Heroin Lab \n 5000\u20ac \n Income: +50\u20ac/s'
+        text: 'Heroin Lab \n 5000\u20ac \n Income: +200\u20ac/s'
         pos_hint: {'x':.7, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(5000, 50)
+        on_release: app.incomeUp(5000, 100)
 
 #############################
 # Organic Production Screen #
@@ -326,7 +326,7 @@
         text: 'Stomach Stealing \n 7000\u20ac \n Income: +75\u20ac/s'
         pos_hint: {'x':.1, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(1000, 5)
+        on_release: app.incomeUp(7000, 150)
 
     DfltButton:
         text: ' '
@@ -357,7 +357,7 @@
         pos_hint: {'x':.275, 'y': .2}
         id: up4-1
     DfltButton:
-        text: 'LSD\n 10\u20ac'
+        text: 'LSD\n 10000\u20ac'
         pos_hint: {'x':.275, 'y': .7}
         id: up1-1
         #on_press: parent.up1-2.pos_hint{'x':.225, 'y': .7.5}
@@ -400,8 +400,9 @@
         pos_hint: {'x':.45, 'y': .6}
         id: OP2-1
     DfltButton:
-        text: 'Steroids\n 2000\u20ac'
+        text: 'Steroids 4 workers\n 2000\u20ac'
         pos_hint: {'x':.45, 'y': .8}
+        on_release: app.ModDisable(0.05,2000)
         id: OP2-1
     DfltButton:
         id: BackToMap
