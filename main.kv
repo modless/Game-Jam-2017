@@ -631,6 +631,12 @@
         text: '<<<'
         pos_hint: {'x':.0, 'y': .0}
         on_release: self.parent.parent.current = 'mapScreen' #ref to ScreenManager
+    DfltButton:
+        id: Sell
+        text: 'SELL!'
+        pos_hint: {'x':.7, 'y': .4}
+        on_release: app.SellAll()
+
 
 
 #################################
