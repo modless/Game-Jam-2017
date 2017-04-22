@@ -1,7 +1,6 @@
 #: import SoundLoader __main__.SoundLoader
 #: import NoTransition __main__.NoTransition
 #: import sys __main__.sys
-#: import cash __main__.cash
 
 ####################
 #  Default Button  #
@@ -21,7 +20,7 @@
     background_radio_normal: 'Location_Off.png'
     background_radio_down: 'Location_On.png'
     group: "location"
-    
+
 ####################
 #  Default Label  #
 ####################
@@ -47,6 +46,7 @@
     DfltButton:
         text: 'Finances'
         pos_hint: {'x':.2, 'y': .0}
+        on_press: self.parent.parent.parent.current = 'financesScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Research'
@@ -80,13 +80,16 @@
         on_press: sys.exit(0)
 
 ####################
-#      Stats Bar     #
+#      Stats Bar   #
 ####################
 <Stats_Bar@FloatLayout>
     DfltLabel:
+        id: cashStr
         size_hint: .4, .03
         pos_hint: {'x':.0, 'y': .97}
-        text: 'Money: ' + str(cash) + "\u20ac"
+        text: app.cashStr
+
+
         
 
 
@@ -154,6 +157,26 @@
         source: 'connections.png'
 
 ##########################
+#    Financies Screen  #
+##########################
+
+<FinancesScreen@Screen>
+    size_hint: 1, 1
+
+    Bottom_Menu:
+        size_hint: 1, 1
+    Widget:
+        size_hint: .5, .5
+
+        pos_hint: {'x':0, 'y': .5}
+        canvas:
+            Color:
+                rgb: 1, 1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+##########################
 #    Research Screen     #
 ##########################
 
@@ -213,5 +236,7 @@
             name: 'connectionsScreen'
         ResearchScreen
             name: 'researchScreen'
+        FinancesScreen:
+            name: 'financesScreen'
 
 
