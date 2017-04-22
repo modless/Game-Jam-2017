@@ -126,9 +126,6 @@
         pos_hint: {'x':.0, 'y': .1}
         source: 'stations.png'
 
-    LocationToggle:
-        pos: dp(10), dp(10)
-
 
 
 
@@ -255,6 +252,7 @@
         size_hint: 0.2, 0.3
         pos_hint: {'x':.7, 'y': .4}
         text: 'Unorganic Production'
+        disabled: 'true'
         on_release: self.parent.parent.parent.current = 'drugProductionScreen' #ref to ScreenManager
 
 ##########################
@@ -588,31 +586,160 @@
 
 <StartupScreen@Screen>
     size_hint: 1, 1
-    Bottom_Menu:
-        size_hint: 1, 1
 
-    Stats_Bar:
-        size_hint: 1, 1
+    DfltLabel:
+        text: "Choose your start location"
+        size_hint: 1, 0.03
+        pos_hint: {'x':.0, 'y': .95}
+        halign: 'center'
 
     ToggleButton:
-        text: 'Drugs:'
-        size_hint: 0.9, 0.05
-        pos_hint: {'x':.05, 'y': .90}
+        text: 'Chicago'
+        size_hint: 1, 0.03
+        pos_hint: {'x':.0, 'y': .92}
+        group: "cities"
+        on_release: app.select()
 
-    DfltLabel:
-        text: app.marijuanaString
-        size_hint: 0.9, 0.05
-        pos_hint: {'x':.1, 'y': .85}
+    ToggleButton:
+        text: 'Mexico'
+        size_hint: 1, 0.03
+        pos_hint: {'x':.0, 'y': .89}
+        group: "cities"
+        on_release: app.select()
 
-    DfltLabel:
-        text: app.shroomsString
-        size_hint: 0.9, 0.05
-        pos_hint: {'x':.1, 'y': .80}
+    ToggleButton:
+        text: 'Bogota'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .86}
+        group: "cities"
+        on_release: app.select()
 
-    DfltLabel:
-        text: app.heroinString
-        size_hint: 0.9, 0.05
-        pos_hint: {'x':.1, 'y': .75}
+    ToggleButton:
+        text: 'Rio De Janeiro'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .83}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'London'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .80}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Hamburg'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .77}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Moscow'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .74}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Amsterdam'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .71}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Melbourne'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .68}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Dzakarta'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .65}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Tokyo'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .62}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Kyoto'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .59}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Seoul'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .56}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Shanghai'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .53}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Bankok'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .50}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Hyderabado'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .47}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Islamabad'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .44}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Kinshasa'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .41}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Egypt'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .38}
+        group: "cities"
+        on_release: app.select()
+
+    ToggleButton:
+        text: 'Ankara'
+        size_hint: 1, .03
+        pos_hint: {'x':.0, 'y': .35}
+        group: "cities"
+        on_release: app.select()
+
+    DfltButton:
+        text:"Start Game"
+        size_hint: 0.3, 0.2
+        pos_hint: {'x':.7, 'y': .0}
+        disabled: app.cityNotSelected
+        on_release: root.parent.current = 'mapScreen'
+
 
 ##############################
 #    Global Prices Screen    #

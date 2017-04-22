@@ -57,6 +57,7 @@ class MainApp(App):
     dateStr = StringProperty()
     connStr = StringProperty('connectionsScreen')
     boolOFF = BooleanProperty(False)
+    cityNotSelected = BooleanProperty(True)
     Products = DictProperty({
         "Marijuana": {
             "cost": 1000,
@@ -157,6 +158,10 @@ class MainApp(App):
 
 
     cashlogSTR = StringProperty('cashlogSTR: 0')
+    def select(self):
+        if self.cityNotSelected == True:
+            self.cityNotSelected = False;
+
     def build(self):
         Window.set_title('Easy way in')
         Window.set_icon('logo1.png')

@@ -31,7 +31,7 @@ integers_dict = {str(i): {'text': str(i), 'is_selected': False}
 
 drug_data_list_of_dicts = [
     {
-        'name': 'Moskow',
+        'name': 'Moscow',
         'Serving Size': '',
         'data': [1000, 2000, 3000, 7000, 2500, 1500, 6000, 3500, 5000, 26000, 2000, 14000, 2500, 30, 25, 2, 4],
         'is_selected': False},
