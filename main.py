@@ -9,7 +9,7 @@ from kivy.lang import BuilderBase, Builder
 from kivy.uix.widget import Widget
 from kivy.graphics import *
 from kivy.uix.image import Image
-from kivy.uix.button import Button
+from kivy.uix.button import *
 from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
 from kivy.core.audio import SoundLoader # garsam
 from kivy.clock import Clock
@@ -26,8 +26,11 @@ class RootWidget(FloatLayout):
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+#Builder.load_file('main.kv')
 class MainApp(App):
-    cash = 1000
+    cash = 10000
+    widget = ResearchScreen(RootWidget)
     connlvl = 1
     cashStr = StringProperty("'Money:' + str(self.cash) + '\u20ac'")
     income = NumericProperty(0)
@@ -86,9 +89,10 @@ class MainApp(App):
                 self.connStr = 'connections3Screen'
     def ModDisable(self,up,cost):
         if cost <= self.cash:
+            widget = ResearchScreen()
             self.cash -= cost
             self.modifier += up
-            Button.Disabled = True
+            remove_widget(widget.ids['OP2-1'].ids)
 
     def getProduct(self, identifier):
         if self.Products[identifier]["cost"] <= self.cash:
