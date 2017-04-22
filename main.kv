@@ -1,7 +1,7 @@
 #: import SoundLoader __main__.SoundLoader
 #: import NoTransition __main__.NoTransition
 #: import sys __main__.sys
-#: import cash __main__.cash
+#
 
 ####################
 #  Default Button  #
@@ -70,13 +70,16 @@
         on_press: sys.exit(0)
 
 ####################
-#      Stats Bar     #
+#     Stats Bar   #
 ####################
 <Stats_Bar@FloatLayout>
     DfltLabel:
+        id: cashStr
         size_hint: .4, .02
         pos_hint: {'x':.0, 'y': .97}
-        text: 'Money: ' + str(cash) + "\u20ac"
+        text: app.cashStr
+
+
         
 
 
