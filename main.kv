@@ -37,36 +37,36 @@
     DfltButton:
         text: 'Map'
         pos_hint: {'x':.0, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'mapScreen' #ref to ScreenManager
+        on_release: root.parent.parent.current = 'mapScreen' #ref to ScreenManager
     DfltButton:
         text: 'Stations'
         pos_hint: {'x':.1, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
+        on_release: root.parent.parent.current = 'stationsScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Finances'
         pos_hint: {'x':.2, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'financesScreen' #ref to ScreenManager
+        on_release: root.parent.parent.current = 'financesScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Research'
         pos_hint: {'x':.3, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'researchScreen' #ref to ScreenManager
+        on_release: root.parent.parent.current = 'researchScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Conections'
         pos_hint: {'x':.4, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
+        on_release: root.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Production'
         pos_hint: {'x':.5, 'y': .0}
-        on_release: self.parent.parent.parent.current = 'productionScreen' #ref to ScreenManager
+        on_release: root.parent.parent.current = 'productionScreen' #ref to ScreenManager
 
     DfltButton:
-        text: 'Button 7'
+        text: 'Warehouse'
         pos_hint: {'x':.6, 'y': .0}
-
+        on_release: root.parent.parent.current = 'warehouseScreen' #ref to ScreenManager
     DfltButton:
         text: 'Button 8'
         pos_hint: {'x':.7, 'y': .0}
@@ -228,7 +228,7 @@
         text: 'up4'
         pos_hint: {'x':.1, 'y': .20}
         size_hint: 0.2, 0.2
-        #on_release: app.incomeUp(1000, 5)
+        #on_release: app.getProduct(1000, '')
 
     DfltButton:
         text: 'Upgrade_4'
@@ -256,22 +256,22 @@
         size_hint: 0.2, 0.2
 
     DfltButton:
-        text: 'Marijuana Farm Patch \n 1000\u20ac \n Income: +5\u20ac/s'
+        text: 'Marijuana Farm Patch \n Costs: 1000\u20ac'
         pos_hint: {'x':.1, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(1000, 5)
+        on_release: app.getProduct('Marijuana')
 
     DfltButton:
-        text: 'Shroom Farm \n 2000\u20ac \n Income: +15\u20ac/s'
+        text: 'Shroom Farm \n Costs: 2000\u20ac'
         pos_hint: {'x':.4, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(2000, 15)
+        on_release: app.getProduct('Shrooms')
 
     DfltButton:
-        text: 'Heroin Lab \n 5000\u20ac \n Income: +50\u20ac/s'
+        text: 'Heroin Lab \n Costs: 5000\u20ac'
         pos_hint: {'x':.7, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(5000, 50)
+        on_release: app.getProduct('Heroin')
 
 #############################
 # Organic Production Screen #
@@ -290,7 +290,7 @@
         text: 'up4'
         pos_hint: {'x':.1, 'y': .20}
         size_hint: 0.2, 0.2
-        #on_release: app.incomeUp(1000, 5)
+        #on_release: app.getProduct(1000, 5)
 
     DfltButton:
         text: 'Upgrade_4'
@@ -318,22 +318,22 @@
         size_hint: 0.2, 0.2
 
     DfltButton:
-        text: 'Stomach Stealing \n 7000\u20ac \n Income: +75\u20ac/s'
+        text: 'Stomach Stealing \n Costs:7000\u20ac'
         pos_hint: {'x':.1, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(1000, 5)
+        on_release: app.getProduct('Stomachs')
 
     DfltButton:
         text: ' '
         pos_hint: {'x':.4, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(2000, 15)
+        #on_release: app.incomeUp(2000, 15)
 
     DfltButton:
         text: ' '
         pos_hint: {'x':.7, 'y': .7}
         size_hint: 0.2, 0.2
-        on_release: app.incomeUp(5000, 50)
+        #on_release: app.incomeUp(5000, 50)
 
 ##########################
 #    Research Screen     #
@@ -395,6 +395,41 @@
         on_release: self.parent.parent.current = 'mapScreen' #ref to ScreenManager
         #Or whatever is the previous screen
 
+##########################
+#    Warehouse Screen    #
+##########################
+
+<WarehouseScreen@Screen>
+    size_hint: 1, 1
+    Bottom_Menu:
+        size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
+
+    DfltLabel:
+        text: 'Drugs:'
+        size_hint: 0.9, 0.05
+        pos_hint: {'x':.05, 'y': .90}
+
+    DfltLabel:
+        text: 'Marijuana: ' + str(eval(app.Products['Marijuana']['quantity']))
+        size_hint: 0.9, 0.05
+        pos_hint: {'x':.1, 'y': .85}
+
+    DfltLabel:
+        text: 'Shrooms: '  + str(app.Products['Shrooms']['quantity'])
+        size_hint: 0.9, 0.05
+        pos_hint: {'x':.1, 'y': .80}
+
+    DfltLabel:
+        text: 'Heroin: ' + str(app.Products['Heroin']['quantity'])
+        size_hint: 0.9, 0.05
+        pos_hint: {'x':.1, 'y': .75}
+
+
+
+
 
 
 #################################
@@ -421,5 +456,7 @@
             name: 'drugProductionScreen'
         OrganicProductionScreen:
             name: 'organicProductionScreen'
+        WarehouseScreen:
+            name: 'warehouseScreen'
 
 
