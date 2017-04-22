@@ -1,62 +1,83 @@
 #: import SoundLoader __main__.SoundLoader
 #: import NoTransition __main__.NoTransition
 #: import sys __main__.sys
+#: import cash __main__.cash
+
 ####################
-#Bottom Menu Button#
+#  Default Button  #
 ####################
-<Footer@Button>
+<DfltButton@Button>
     size_hint: .1, .1
     on_press: SoundLoader.load('Untitled 2.wav').play()
     text_size: (self.width, None)
     halign: 'center'
+    
+####################
+#  Default Label  #
+####################
+<DfltLabel@Label>
+    text_size: self.size
+    halign: 'left'
+    valign: 'middle'
 
 ####################
 #Whole Bottom Menu #
 ####################
 
 <Bottom_Menu@FloatLayout>
-    Footer:
+    DfltButton:
         text: 'Map'
         pos_hint: {'x':.0, 'y': .0}
         on_press: self.parent.parent.parent.current = 'mapScreen' #ref to ScreenManager
-    Footer:
+    DfltButton:
         text: 'Stations'
         pos_hint: {'x':.1, 'y': .0}
         on_press: self.parent.parent.parent.current = 'stationsScreen' #ref to ScreenManager
 
-    Footer:
+    DfltButton:
         text: 'Finances'
         pos_hint: {'x':.2, 'y': .0}
 
-    Footer:
+    DfltButton:
         text: 'Research'
         pos_hint: {'x':.3, 'y': .0}
 
-    Footer:
+    DfltButton:
         text: 'Conections'
         pos_hint: {'x':.4, 'y': .0}
         on_press: self.parent.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
 
-    Footer:
+    DfltButton:
         text: 'Button 6'
         pos_hint: {'x':.5, 'y': .0}
 
-    Footer:
+    DfltButton:
         text: 'Button 7'
         pos_hint: {'x':.6, 'y': .0}
 
-    Footer:
+    DfltButton:
         text: 'Button 8'
         pos_hint: {'x':.7, 'y': .0}
 
-    Footer:
+    DfltButton:
         text: 'Setting'
         pos_hint: {'x':.8, 'y': .0}
 
-    Footer:
+    DfltButton:
         text: 'Quit'
         pos_hint: {'x':.9, 'y': .0}
         on_press: sys.exit(0)
+
+####################
+#      Stats Bar     #
+####################
+<Stats_Bar@FloatLayout>
+    DfltLabel:
+        size_hint: .4, .02
+        pos_hint: {'x':.0, 'y': .97}
+        text: 'Money: ' + str(cash) + "\u20ac"
+        
+
 
 ####################
 # Stations Screen  #
@@ -65,11 +86,14 @@
 <StationsScreen@Screen>
     size_hint: 1, 1
 
+    Stats_Bar:
+        size_hint: 1, 1
+
     Bottom_Menu:
         size_hint: 1, 1
 
     Image:
-        size_hint: .9, .9
+        size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
         source: 'stations.png'
 
@@ -84,7 +108,7 @@
         size_hint: 1, 1
 
     Image:
-        size_hint: .9, .9
+        size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
         source: 'map.png'
 
@@ -99,7 +123,7 @@
         size_hint: 1, 1
 
     Image:
-        size_hint: .9, .9
+        size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
         source: 'connections.png'
 

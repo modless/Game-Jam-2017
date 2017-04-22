@@ -10,6 +10,8 @@ from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen, NoTransition
 from kivy.core.audio import SoundLoader # garsam
 
+cash = 2000000000.63
+
 class RootWidget(FloatLayout):
     pass
 
