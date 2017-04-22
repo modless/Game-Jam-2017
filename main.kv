@@ -44,19 +44,19 @@
         on_release: root.parent.parent.current = 'stationsScreen' #ref to ScreenManager
 
     DfltButton:
-        text: 'Finances'
+        text: 'Conections'
         pos_hint: {'x':.2, 'y': .0}
+        on_release: self.parent.parent.parent.current = app.connStr #ref to ScreenManager
+
+    DfltButton:
+        text: 'Finances'
+        pos_hint: {'x':.3, 'y': .0}
         on_release: root.parent.parent.current = 'financesScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Research'
-        pos_hint: {'x':.3, 'y': .0}
-        on_release: root.parent.parent.current = 'researchScreen' #ref to ScreenManager
-
-    DfltButton:
-        text: 'Conections'
         pos_hint: {'x':.4, 'y': .0}
-        on_release: root.parent.parent.current = 'connectionsScreen' #ref to ScreenManager
+        on_release: root.parent.parent.current = 'researchScreen' #ref to ScreenManager
 
     DfltButton:
         text: 'Production'
@@ -89,6 +89,16 @@
         size_hint: .4, .03
         pos_hint: {'x':.0, 'y': .97}
         text: app.cashStr
+    DfltLabel:
+        id: dateStr
+        size_hint: .4, .03
+        pos_hint: {'x':.9, 'y': .97}
+        text: app.dateStr
+    DfltLabel:
+        id: dateStr
+        size_hint: .4, .03
+        pos_hint: {'x':.7, 'y': .97}
+        text: app.connStr
 
 
         
@@ -111,7 +121,7 @@
         id: map
         size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
-        source: 'map.png'
+        source: 'stations.png'
 
     LocationToggle:
         pos: dp(10), dp(10)
@@ -155,7 +165,36 @@
     Image:
         size_hint: .9, .85
         pos_hint: {'x':.0, 'y': .1}
+
         source: 'map1.png'
+<Connections2Screen@Screen>
+    size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
+
+    Bottom_Menu:
+        size_hint: 1, 1
+
+    Image:
+        size_hint: .9, .85
+        pos_hint: {'x':.0, 'y': .1}
+
+        source: 'map2.png'
+<Connections3Screen@Screen>
+    size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
+
+    Bottom_Menu:
+        size_hint: 1, 1
+
+    Image:
+        size_hint: .9, .85
+        pos_hint: {'x':.0, 'y': .1}
+
+        source: 'map3.png'
 
 ##########################
 #    Financies Screen  #
@@ -341,6 +380,8 @@
 
 <ResearchScreen@Screen>
     size_hint: 1, 1
+    Image:
+        source: 'tiled.png'
     DfltButton:
         text: 'Upgrade_1-2'
         pos_hint: {'x':1.2, 'y': 1.2}
@@ -350,7 +391,7 @@
         pos_hint: {'x':.275, 'y': .2}
         id: up4-1
     DfltButton:
-        text: 'LSD\n 10\u20ac'
+        text: 'LSD\n 10000\u20ac'
         pos_hint: {'x':.275, 'y': .7}
         id: up1-1
         #on_press: parent.up1-2.pos_hint{'x':.225, 'y': .7.5}
@@ -389,11 +430,24 @@
         pos_hint: {'x':.45, 'y': .8}
         id: OP2-1
     DfltButton:
+        text: 'Connection lvl 2 \n 2000\u20ac'
+        pos_hint: {'x':.45, 'y': .6}
+        id: OP2-8
+        on_release: app.upgradeConn(2,5000,1.05,1.05)
+    DfltButton:
+        text: 'Steroids 4 workers\n 2000\u20ac'
+        pos_hint: {'x':.45, 'y': .8}
+        on_release: app.ModDisable(0.05,2000)
+        id: OP2-1
+    DfltButton:
         id: BackToMap
         text: '<<<'
         pos_hint: {'x':.0, 'y': .0}
         on_release: self.parent.parent.current = 'mapScreen' #ref to ScreenManager
         #Or whatever is the previous screen
+
+    Stats_Bar:
+        size_hint: 1, 1
 
 ##########################
 #    Warehouse Screen    #
@@ -446,6 +500,10 @@
             name: 'stationsScreen'
         ConnectionsScreen:
             name: 'connectionsScreen'
+        Connections2Screen:
+            name: 'connections2Screen'
+        Connections3Screen:
+            name: 'connections3Screen'
         ResearchScreen
             name: 'researchScreen'
         FinancesScreen:
