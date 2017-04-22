@@ -2,28 +2,6 @@
 #: import SlideTransition __main__.SlideTransition
 #: import sys __main__.sys
 
-#
-#######################
-#  SCREEN MANAGEMENT  #
-#######################
-ScreenManagement:
-    transition: SlideTransition()
-    MainMenu:
-    MapMenu:
-    ResearchMenu:
-    SettingsMenu:
-<MainMenu>:
-    name: 'Main'
-    DfltButton:
-        text: 'Map'
-        pos_hint: {'x':.5, 'y': .5}
-        on_release: app.root.current = 'Map'
-<MapMenu>:
-    name: 'Map'
-    DfltButton:
-        text: 'Map'
-        pos_hint: {'x':.5, 'y': .5}
-        on_release: app.root.current = 'Main'
 ####################
 #  Default Button  #
 ####################
@@ -219,13 +197,13 @@ ScreenManagement:
         size_hint: 0.2, 0.3
         pos_hint: {'x':.1, 'y': .4}
         text: 'Drug Production'
-        on_release: root.parent.parent.current = 'mapScreen' #ref to ScreenManager
+        on_release: root.parent.current = 'drugProductionScreen' #ref to ScreenManager
 
     DfltButton:
         size_hint: 0.2, 0.3
         pos_hint: {'x':.4, 'y': .4}
         text: 'Organic Production'
-        on_release: self.parent.parent.parent.current = 'drugProductionScreen' #ref to ScreenManager
+        on_release: root.parent.current = 'organicProductionScreen' #ref to ScreenManager
 
     DfltButton:
         size_hint: 0.2, 0.3
@@ -239,50 +217,123 @@ ScreenManagement:
 
 <DrugProductionScreen@Screen>
     size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
+
+    Bottom_Menu:
+        size_hint: 1, 1
+
+    DfltButton:
+        text: 'up4'
+        pos_hint: {'x':.1, 'y': .20}
+        size_hint: 0.2, 0.2
+        #on_release: app.incomeUp(1000, 5)
+
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.1, 'y': .15}
+        pos_hint: {'x':.4, 'y': .20}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.4, 'y': .15}
+        pos_hint: {'x':.7, 'y': .20}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.7, 'y': .15}
+        pos_hint: {'x':.1, 'y': .45}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.1, 'y': .4}
+        pos_hint: {'x':.4, 'y': .45}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.4, 'y': .4}
+        pos_hint: {'x':.7, 'y': .45}
+        size_hint: 0.2, 0.2
+
+    DfltButton:
+        text: 'Marijuana Farm Patch \n 1000\u20ac \n Income: +5\u20ac/s'
+        pos_hint: {'x':.1, 'y': .7}
+        size_hint: 0.2, 0.2
+        on_release: app.incomeUp(1000, 5)
+
+    DfltButton:
+        text: 'Shroom Farm \n 2000\u20ac \n Income: +15\u20ac/s'
+        pos_hint: {'x':.4, 'y': .7}
+        size_hint: 0.2, 0.2
+        on_release: app.incomeUp(2000, 15)
+
+    DfltButton:
+        text: 'Heroin Lab \n 5000\u20ac \n Income: +50\u20ac/s'
+        pos_hint: {'x':.7, 'y': .7}
+        size_hint: 0.2, 0.2
+        on_release: app.incomeUp(5000, 50)
+
+#############################
+# Organic Production Screen #
+#############################
+
+<OrganicProductionScreen@Screen>
+    size_hint: 1, 1
+
+    Stats_Bar:
+        size_hint: 1, 1
+
+    Bottom_Menu:
+        size_hint: 1, 1
+
+    DfltButton:
+        text: 'up4'
+        pos_hint: {'x':.1, 'y': .20}
+        size_hint: 0.2, 0.2
+        #on_release: app.incomeUp(1000, 5)
+
+    DfltButton:
+        text: 'Upgrade_4'
+        pos_hint: {'x':.4, 'y': .20}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.7, 'y': .4}
+        pos_hint: {'x':.7, 'y': .20}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.1, 'y': .65}
+        pos_hint: {'x':.1, 'y': .45}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.4, 'y': .65}
+        pos_hint: {'x':.4, 'y': .45}
         size_hint: 0.2, 0.2
 
     DfltButton:
         text: 'Upgrade_4'
-        pos_hint: {'x':.7, 'y': .65}
+        pos_hint: {'x':.7, 'y': .45}
         size_hint: 0.2, 0.2
+
+    DfltButton:
+        text: 'Stomach Stealing \n 7000\u20ac \n Income: +75\u20ac/s'
+        pos_hint: {'x':.1, 'y': .7}
+        size_hint: 0.2, 0.2
+        on_release: app.incomeUp(1000, 5)
+
+    DfltButton:
+        text: ' '
+        pos_hint: {'x':.4, 'y': .7}
+        size_hint: 0.2, 0.2
+        on_release: app.incomeUp(2000, 15)
+
+    DfltButton:
+        text: ' '
+        pos_hint: {'x':.7, 'y': .7}
+        size_hint: 0.2, 0.2
+        on_release: app.incomeUp(5000, 50)
 
 ##########################
 #    Research Screen     #
@@ -368,5 +419,7 @@ ScreenManagement:
             name: 'productionScreen'
         DrugProductionScreen:
             name: 'drugProductionScreen'
+        OrganicProductionScreen:
+            name: 'organicProductionScreen'
 
 

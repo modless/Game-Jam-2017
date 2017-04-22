@@ -37,6 +37,12 @@ class MainApp(App):
         self.cash += self.income
         self.cashStr = 'Money:' + str(self.cash) + "\u20ac"
 
+    def incomeUp(self, cost, up):
+        if cost <= self.cash:
+            self.cash -= cost
+            self.income += up
+
+
 
 if __name__ == '__main__':
     MainApp().run()
